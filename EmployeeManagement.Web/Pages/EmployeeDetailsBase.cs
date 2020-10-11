@@ -15,11 +15,12 @@ namespace EmployeeManagement.Web.Pages
         public IEmployeeService EmployeeService { get; set; }
 
         [Parameter]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         protected async override Task OnInitializedAsync()
         {
-            Employee = await EmployeeService.GetEmployee(Id);
+            Id = Id ?? "1";
+            Employee = await EmployeeService.GetEmployee(int.Parse(Id));
         }
     }
 }
