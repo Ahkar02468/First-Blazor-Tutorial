@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using EmployeeManagement.Models;
+using EmployeeManagement.Web.Services;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,16 @@ namespace EmployeeManagement.Web.Pages
 {
     public class EmployeeDetailsBase : ComponentBase
     {
+        public Employee Employee { get; set; } = new Employee();
+        [Inject]
+        public IEmployeeService EmployeeService { get; set; }
+
         [Parameter]
-        public int ID { get; set; }
+        public int Id { get; set; }
+
+        protected async override Task OnInitializedAsync()
+        {
+            Employee = await EmployeeService.GetEmployee(Id);
+        }
     }
 }
