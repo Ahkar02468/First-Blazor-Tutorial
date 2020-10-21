@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Web", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.API", "EmployeeManagement.API\EmployeeManagement.API.csproj", "{9B2B4BB4-97E7-4099-A5BB-7D3E9E97A34E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKSB.Components", "AKSB.Components\AKSB.Components.csproj", "{074AA39E-4883-49F3-92B6-19F8F20240C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9B2B4BB4-97E7-4099-A5BB-7D3E9E97A34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2B4BB4-97E7-4099-A5BB-7D3E9E97A34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2B4BB4-97E7-4099-A5BB-7D3E9E97A34E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074AA39E-4883-49F3-92B6-19F8F20240C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074AA39E-4883-49F3-92B6-19F8F20240C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074AA39E-4883-49F3-92B6-19F8F20240C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074AA39E-4883-49F3-92B6-19F8F20240C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
