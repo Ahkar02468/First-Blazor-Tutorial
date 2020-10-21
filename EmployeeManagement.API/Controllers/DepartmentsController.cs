@@ -29,7 +29,6 @@ namespace EmployeeManagement.API.Controllers
             }
             catch (Exception)
             {
-
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving data from the database");
             }
         }
