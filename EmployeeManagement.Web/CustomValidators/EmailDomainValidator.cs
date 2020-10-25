@@ -16,11 +16,10 @@ namespace EmployeeManagement.Models.CustomValidators
                 if (strings.Length > 1 && strings[1].ToUpper() == AllowedDomain.ToUpper())
                 {
                     return null;
-                } 
-            return new ValidationResult(ErrorMessage, new[] { validationContext.MemberName });
-        }
+                }
+                return new ValidationResult(ErrorMessage, new[] { validationContext.MemberName }); 
+            }
             return null;
-
         }
     }
 }
