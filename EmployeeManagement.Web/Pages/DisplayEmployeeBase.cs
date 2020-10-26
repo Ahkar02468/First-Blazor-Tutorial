@@ -25,13 +25,19 @@ namespace EmployeeManagement.Web.Pages
         public EventCallback<bool> OnEmployeeSelection { get; set; }
         [Parameter]
         public EventCallback<int> OnEmployeeDeleted { get; set; }
+        public AKSB.Components.ConfirmBase DeleteConfirmation { get; set; }
 
-        protected async Task Delete_Click()
+        protected void Delete_Click()
         {
-            await EmployeeService.DeleteEmployee(Employee.EmployeeId);
-            await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
-            //NavigationManager.NavigateTo("/", true);
+            DeleteConfirmation.show();
+            StateHasChanged();
         }
+        //protected async Task Delete_Click()
+        //{
+        //    await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+        //    await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+        //    //NavigationManager.NavigateTo("/", true);
+        //}
         protected async Task CheckBoxChange(ChangeEventArgs e)
         {
             await OnEmployeeSelection.InvokeAsync((bool)e.Value);
