@@ -29,15 +29,17 @@ namespace EmployeeManagement.Web.Pages
 
         protected void Delete_Click()
         {
-            DeleteConfirmation.show();
-            StateHasChanged();
+            DeleteConfirmation.Show();
         }
-        //protected async Task Delete_Click()
-        //{
-        //    await EmployeeService.DeleteEmployee(Employee.EmployeeId);
-        //    await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
-        //    //NavigationManager.NavigateTo("/", true);
-        //}
+        protected async Task ConfirmDelete_Click(bool deleteConfirmed)
+        {
+            if (deleteConfirmed)
+            {
+                await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+                await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+            }
+        }
+        
         protected async Task CheckBoxChange(ChangeEventArgs e)
         {
             await OnEmployeeSelection.InvokeAsync((bool)e.Value);

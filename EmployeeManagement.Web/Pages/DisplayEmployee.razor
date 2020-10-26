@@ -17,4 +17,5 @@
     }
 
 </div>
-<Confirm @ref="DeleteConfirmation"></Confirm>
+<Confirm @ref="DeleteConfirmation" ConfirmationChanged="ConfirmDelete_Click" 
+         ConfirmationMessage=@($"Are you sure you want to delete \"{Employee.FirstName} {Employee.LastName}\"")></Confirm>

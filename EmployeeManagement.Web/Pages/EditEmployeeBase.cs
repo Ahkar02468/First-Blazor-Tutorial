@@ -32,6 +32,7 @@ namespace EmployeeManagement.Web.Pages
         public List<Department> Departments { get; set; } = new list<Department>();
         [Parameter]
         public string Id { get; set; }
+
         protected async override Task OnInitializedAsync()
         {
             int.TryParse(Id, out int employeeId);
@@ -86,10 +87,26 @@ namespace EmployeeManagement.Web.Pages
                 NavigationManager.NavigateTo("/");
             }
         }
-        protected async Task Delete_Click()
+        public AKSB.Components.ConfirmBase DeleteConfirmation { get; set; }
+        protected void Delete_Click()
         {
-            await EmployeeService.DeleteEmployee(Employee.EmployeeId);
-            NavigationManager.NavigateTo("/");
+            DeleteConfirmation.Show();
         }
+        [Parameter]
+        public EventCallback<int> OnEmployeeDeleted { get; set; }
+        protected async Task ConfirmDelete_Click(bool deleteConfirmed)
+        {
+            if (deleteConfirmed)
+            {
+                await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+                await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+                NavigationManager.NavigateTo("/");
+            }
+        }
+        //protected async Task Delete_Click()
+        //{
+        //    await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+        //    NavigationManager.NavigateTo("/");
+        //}
     }
 }
