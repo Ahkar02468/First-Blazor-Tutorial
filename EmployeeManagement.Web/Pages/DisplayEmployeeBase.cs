@@ -20,14 +20,18 @@ namespace EmployeeManagement.Web.Pages
 
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
-        protected async Task Delete_Click()
-        {
-            await EmployeeService.DeleteEmployee(Employee.EmployeeId);
-            NavigationManager.NavigateTo("/");
-        }
 
         [Parameter]
         public EventCallback<bool> OnEmployeeSelection { get; set; }
+        [Parameter]
+        public EventCallback<int> OnEmployeeDeleted { get; set; }
+
+        protected async Task Delete_Click()
+        {
+            await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+            await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+            //NavigationManager.NavigateTo("/", true);
+        }
         protected async Task CheckBoxChange(ChangeEventArgs e)
         {
             await OnEmployeeSelection.InvokeAsync((bool)e.Value);
