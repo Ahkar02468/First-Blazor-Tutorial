@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Web", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.API", "EmployeeManagement.API\EmployeeManagement.API.csproj", "{9B2B4BB4-97E7-4099-A5BB-7D3E9E97A34E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKSB.Components", "AKSB.Components\AKSB.Components.csproj", "{074AA39E-4883-49F3-92B6-19F8F20240C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKSB.Components", "AKSB.Components\AKSB.Components.csproj", "{074AA39E-4883-49F3-92B6-19F8F20240C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
